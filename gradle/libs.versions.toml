@@ -1,0 +1,54 @@
+[versions]
+androidx-core = "1.12.0"
+androidx-appcompat = "1.7.0"
+material = "1.12.0"
+androidx-constraintlayout = "2.1.4"
+firebase-bom = "32.7.0"
+camerax = "1.3.0-beta01"
+face-detection = "16.1.7"
+tensorflow-lite = "2.16.1"
+tensorflow-lite-support = "0.4.0"
+play-services-location = "21.2.0"
+poi = "5.2.3"
+xmlbeans = "5.2.0"
+commons-io = "2.15.1"
+kotlinx-coroutines = "1.8.0"
+lifecycle = "2.6.1"
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+androidx-espresso = "3.5.1"
+
+[libraries]
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+androidx-appcompat-v170 = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+material-v1120 = { module = "com.google.android.material:material", version.ref = "material" }
+androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
+firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
+firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+
+androidx-camera-core-v130beta01 = { module = "androidx.camera:camera-core", version.ref = "camerax" }
+androidx-camera-camera2-v130beta01 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+androidx-camera-lifecycle-v130beta01 = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+androidx-camera-view-v130beta01 = { module = "androidx.camera:camera-view", version.ref = "camerax" }
+
+face-detection-v1617 = { module = "org.tensorflow:tensorflow-lite-task-vision", version.ref = "face-detection" }
+tensorflow-lite-task-vision = { module = "org.tensorflow:tensorflow-lite-task-vision", version.ref = "face-detection" }
+tensorflow-lite-support-v040 = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflow-lite-support" }
+tensorflow-lite-v2161 = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflow-lite" }
+
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "play-services-location" }
+
+poi = { module = "org.apache.poi:poi", version.ref = "poi" }
+xmlbeans = { module = "org.apache.xmlbeans:xmlbeans", version.ref = "xmlbeans" }
+commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
+
+kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-ktx-v261 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+
+junit = { module = "junit:junit", version.ref = "junit" }
+androidx-junit-v115 = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso" }
