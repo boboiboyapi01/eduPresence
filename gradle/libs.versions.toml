@@ -1,54 +1,134 @@
 [versions]
-androidx-core = "1.12.0"
+# Core Android
+androidx-core-ktx = "1.16.0"
 androidx-appcompat = "1.7.0"
 material = "1.12.0"
-androidx-constraintlayout = "2.1.4"
-firebase-bom = "32.7.0"
-camerax = "1.3.0-beta01"
+constraintlayout = "2.2.1"
+recyclerview = "1.4.0"
+
+# Firebase
+firebase-bom = "33.14.0"
+
+# CameraX
+camerax = "1.4.2"
+
+# ML Kit Face Detection
 face-detection = "16.1.7"
-tensorflow-lite = "2.16.1"
-tensorflow-lite-support = "0.4.0"
-play-services-location = "21.2.0"
-poi = "5.2.3"
-xmlbeans = "5.2.0"
-commons-io = "2.15.1"
-kotlinx-coroutines = "1.8.0"
-lifecycle = "2.6.1"
+
+# Play Services Location
+play-services-location = "21.3.0"
+
+# MVVM & Lifecycle
+lifecycle = "2.9.0"
+navigation = "2.9.0"
+
+# Excel Export
+poi = "5.3.0"
+
+# Glide
+glide = "4.16.0"
+
+# Coroutines
+kotlinx-coroutines = "1.10.2"
+
+# Room
+room = "2.7.1"
+
+# Supabase
+supabase = "2.0.0"
+
+# Ktor untuk Supabase
+ktor = "3.1.3"
+
+# Kotlin Serialization
+kotlinx-serialization-json = "1.8.1"
+
+# Testing
 junit = "4.13.2"
-androidx-junit = "1.1.5"
-androidx-espresso = "3.5.1"
+androidx-junit = "1.2.1"
+androidx-espresso = "3.6.1"
+
+# TensorFlow
+tensorflow-lite = "2.16.1"
+tensorflow-lite-support = "0.4.4"
+
+# Apache Commons
+commons-io = "2.16.1"
 
 [libraries]
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
-androidx-appcompat-v170 = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
-material-v1120 = { module = "com.google.android.material:material", version.ref = "material" }
-androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "androidx-constraintlayout" }
+# Supabase
+supabase-bom = { group = "io.github.jan.supabase", name = "bom", version.ref = "supabase" }
+supabase-auth = { group = "io.github.jan.supabase", name = "auth" }
+supabase-storage = { group = "io.github.jan.supabase", name = "storage" }
+supabase-postgrest = { group = "io.github.jan.supabase", name = "postgrest" }
 
+# Core Android
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+
+# Firebase
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebase-bom" }
 firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
 firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
+firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx" }
+firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 
-androidx-camera-core-v130beta01 = { module = "androidx.camera:camera-core", version.ref = "camerax" }
-androidx-camera-camera2-v130beta01 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
-androidx-camera-lifecycle-v130beta01 = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
-androidx-camera-view-v130beta01 = { module = "androidx.camera:camera-view", version.ref = "camerax" }
+# CameraX
+androidx-camera-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
+androidx-camera-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
+androidx-camera-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "camerax" }
+androidx-camera-view = { module = "androidx.camera:camera-view", version.ref = "camerax" }
 
-face-detection-v1617 = { module = "org.tensorflow:tensorflow-lite-task-vision", version.ref = "face-detection" }
-tensorflow-lite-task-vision = { module = "org.tensorflow:tensorflow-lite-task-vision", version.ref = "face-detection" }
-tensorflow-lite-support-v040 = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflow-lite-support" }
-tensorflow-lite-v2161 = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflow-lite" }
+# ML Kit Face Detection
+face-detection = { module = "com.google.mlkit:face-detection", version.ref = "face-detection" }
 
+# Play Services Location
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "play-services-location" }
 
-poi = { module = "org.apache.poi:poi", version.ref = "poi" }
-xmlbeans = { module = "org.apache.xmlbeans:xmlbeans", version.ref = "xmlbeans" }
-commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }
+# MVVM & Lifecycle
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
+navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
 
+# Excel Export
+poi = { module = "org.apache.poi:poi", version.ref = "poi" }
+poi-ooxml = { module = "org.apache.poi:poi-ooxml", version.ref = "poi" }
+
+# Glide
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+glide-annotation = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+
+# Coroutines
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
 
-androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-androidx-lifecycle-runtime-ktx-v261 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+# Room
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 
+# Ktor untuk Supabase
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+# Kotlin Serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+
+# Testing
 junit = { module = "junit:junit", version.ref = "junit" }
-androidx-junit-v115 = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
+androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidx-junit" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-espresso" }
+
+# TensorFlow
+#noinspection Aligned16KB,Aligned16KB
+tensorflow-lite = { module = "org.tensorflow:tensorflow-lite", version.ref = "tensorflow-lite" }
+tensorflow-lite-support = { module = "org.tensorflow:tensorflow-lite-support", version.ref = "tensorflow-lite-support" }
+
+# Apache Commons
+commons-io = { module = "commons-io:commons-io", version.ref = "commons-io" }

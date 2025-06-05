@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/student_nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.edupresence.ui.student.StudentDashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_scan"
+        android:name="com.example.edupresence.ui.FaceScanActivity"
+        android:label="Scan" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.edupresence.ui.AttendanceHistoryFragment"
+        android:label="History" />
+</navigation>

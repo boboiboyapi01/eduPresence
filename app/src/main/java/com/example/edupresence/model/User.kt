@@ -3,7 +3,8 @@ package com.example.edupresence.model
 data class User(
     val id: String = "",
     val email: String = "",
+    val role: String = "",
     val name: String = "",
-    val role: String = "", // "teacher" or "student"
-    val faceEmbedding: String = "" // Base64 encoded face data
+    val classId: Int = 0,
+    val faceEmbedding: String? = null
 )

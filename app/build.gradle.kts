@@ -1,8 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
     id("com.google.gms.google-services")
-    id("org.jetbrains.kotlin.kapt")
+    id("com.google.firebase.crashlytics")
+    id("org.jetbrains.kotlin.plugin.serialization")
 }
 
 android {
@@ -12,20 +14,15 @@ android {
     defaultConfig {
         applicationId = "com.example.edupresence"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        // TensorFlow Lite config
-//        aaptOptions {
-//            noCompress.add("tflite")
-//        }
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -35,68 +32,97 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 }
 
 dependencies {
+    // ❌ HAPUS BARIS INI - ini yang menyebabkan error
+    // implementation("com.github.User:Repo:Tag")
+
     // Core Android
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat.v170)
-    implementation(libs.material.v1120)
-    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.constraintlayout)
+    implementation(libs.recyclerview)
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
-    implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.storage.ktx)
+    implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.analytics.ktx)
 
     // CameraX
-//    val cameraxVersion = "1.3.0-beta01"
-    implementation(libs.androidx.camera.core.v130beta01)
-    implementation(libs.androidx.camera.camera2.v130beta01)
-    implementation(libs.androidx.camera.lifecycle.v130beta01)
-    implementation(libs.androidx.camera.view.v130beta01)
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view)
 
-    // Face Detection
-    implementation(libs.face.detection.v1617)
-    implementation ("org.tensorflow:tensorflow-lite-task-vision:0.4.2")
+    // ML Kit Face Detection
+    implementation(libs.face.detection)
 
-
-    // TensorFlow Lite
-    implementation(libs.tensorflow.lite.task.vision)
-    implementation(libs.tensorflow.lite.support.v040)
-    implementation(libs.tensorflow.lite.v2161)
-
-    // Location
+    // Play Services Location
     implementation(libs.play.services.location)
+
+    // MVVM & Lifecycle
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
 
     // Excel Export
     implementation(libs.poi)
-    implementation("org.apache.poi:poi-ooxml:5.2.3") {
-        exclude(group = "org.apache.xmlbeans", module = "xmlbeans")
-    }
-    implementation(libs.xmlbeans)
-    implementation(libs.commons.io)
+    implementation(libs.poi.ooxml)
+
+    // Glide
+    implementation(libs.glide)
+    kapt(libs.glide.annotation)
 
     // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.play.services)
 
-    // Lifecycle
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx.v261)
+    // Room
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
+    // ✅ PERBAIKAN: Supabase dengan BOM dan tanpa versi eksplisit
+    implementation(platform(libs.supabase.bom))
+    implementation(libs.supabase.auth)
+    implementation(libs.supabase.storage)
+    implementation(libs.supabase.postgrest)
+
+    // Ktor untuk Supabase
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.serialization.kotlinx.json)
+
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
 
     // Testing
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit.v115)
+    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // TensorFlow
+    implementation(libs.tensorflow.lite)
+    implementation(libs.tensorflow.lite.support)
+
+    // Apache Commons
+    implementation(libs.commons.io)
 }

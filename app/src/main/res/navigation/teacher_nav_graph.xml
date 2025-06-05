@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/teacher_nav_graph"
+    app:startDestination="@id/navigation_dashboard">
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.example.edupresence.ui.teacher.TeacherDashboardFragment"
+        android:label="Dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_classes"
+        android:name="com.example.edupresence.ui.teacher.ClassManagementActivity"
+        android:label="Classes" />
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.edupresence.ui.AttendanceHistoryFragment"
+        android:label="History" />
+</navigation>

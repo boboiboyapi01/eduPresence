@@ -1,17 +1,19 @@
 package com.example.edupresence.model
 
+import com.google.firebase.firestore.PropertyName
+
 data class Class(
-    val id: String = "",
-    val name: String = "",
-    val teacherId: String = "",
-    val teacherName: String = "",
-    val students: List<String> = listOf(), // Student IDs
-    val schedule: Schedule = Schedule(),
-    val allowedLocation: Location = Location()
+    val id: Int,
+    val name: String,
+    val teacherId: String,
+    val allowedLocation: Location? = null,
+    val schedule: List<String> = emptyList(),
+    val students: List<String> = emptyList(),
+    val teacherName: String
 ) {
     data class Location(
-        val latitude: Double = 0.0,
-        val longitude: Double = 0.0,
-        val radius: Double = 100.0 // meters
+        @PropertyName("latitude") val latitude: Double = 0.0,
+        @PropertyName("longitude") val longitude: Double = 0.0,
+        @PropertyName("radius") val radius: Int = 0
     )
 }
